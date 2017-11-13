@@ -1,0 +1,24 @@
+<div class="container">
+	<br>
+	<h3 class="display-3">Productos publicados</h3>
+	<p class="lead">Aquí aparecen tus articulos publicados</p>
+	<br>
+	<div class="row">
+		<% @products.each do |product| %>
+			<div class="col-md-3">
+				<br>
+				<div class="card" style="width: 12rem;">
+					<%= image_tag "public.jpg", :class => "card-img-top" %>
+					<div class="card-body">
+						<h4 class="card-title"><%= product.name%></h4>
+						<p><%= product.price%>$</p>
+			 			<div class="btn-group">
+			 				<a href="#" class="btn btn-success">Edit</a>
+			 				<a href="#" class="btn btn-danger">Delet</a>
+			 			</div>
+					</div>
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>
