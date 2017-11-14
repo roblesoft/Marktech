@@ -11,10 +11,10 @@
 					<%= image_tag "public.jpg", :class => "card-img-top" %>
 					<div class="card-body">
 						<h4 class="card-title"><%= product.name%></h4>
-						<p><%= product.price%>$</p>
+						<p>$<%= product.price%></p>
 			 			<div class="btn-group">
-			 				<a href="#" class="btn btn-success">Edit</a>
-			 				<a href="#" class="btn btn-danger">Delet</a>
+			 				<%= link_to "Edit", edit_product_path(product), :class => "btn btn-success"%>
+			 				<%= link_to "Delete", product, method: :delete, :class => "btn btn-danger"%>
 			 			</div>
 					</div>
 				</div>

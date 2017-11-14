@@ -1,0 +1,48 @@
+<% name ||= "Crear" %>
+<br>
+<div class="row justify-content-center">
+<h3 class="display-3"><%= name %> tu producto</h3>
+</div>
+<br>
+<div class="container">
+	<div class="row justify-content-center">
+	<%= form_for(@product) do |f| %>
+	<form>
+  		<% @product.errors.full_messages.each do |message| %>
+  		<div class="alert alert-danger" role="alert">
+  			*<%= message %>
+  		</div>
+  		<%end%>
+		
+		<div class="form-group">
+			<div class="form-group row">
+    			<div class="col-sm-10">
+    				<label >Nombre del producto</label>
+			 		<%= f.text_field :name, placeholder: "Nombre" , :class => "form-control"%>
+			 	</div>
+			 </div>
+		</div>
+		<div class="form-group">
+			<div class="form-group row">
+    			<!--<label for="inputEmail3" class="col-sm-4 col-form-label">Precio</label>-->
+    			<div class="col-sm-10">
+    				<label >Precio del producto</label>
+	    			<div class="input-group">
+	    				<span class="input-group-addon">$</span>
+				 		<%= f.text_field :price, placeholder: "Precio" , :class => "form-control"%>
+				 		<span class="input-group-addon">.00</span>
+				 	</div>
+			 	</div>
+			 </div>
+		</div>
+		<div class="form-group row">
+    		<div class="col-sm-10">
+      			<%= f.submit "Publicar", :class =>"btn btn-primary"%>
+    		</div>
+  		</div>
+	</form>
+<%end%>
+</div>
+
+</div>
+
